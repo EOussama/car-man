@@ -28,7 +28,7 @@ $(document).ready(() => {
 
     function updateModels(brandID) {
 
-        $.get("carsave/updateModels/" + brandID, function (data) {
+        $.get("carman/updateModels/" + brandID, function (data) {
 
             data = JSON.parse(data);
 

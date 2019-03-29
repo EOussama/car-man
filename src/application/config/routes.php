@@ -50,8 +50,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
-$route['ar'] = 'carsave/index/ar/$1';
-$route['es'] = 'carsave/index/es/$1';
+$route['ar'] = 'carman/index/ar/$1';
+$route['es'] = 'carman/index/es/$1';
 $route['default_controller'] = 'carman';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
