@@ -55,7 +55,7 @@
 					<input type="file" class="form-control-file" id="filetarget" accept="image/*">
 				</div>
 
-				<input type="hidden" value="<?= $lang; ?>" name="lang">
+				<input type="hidden" value="<?= $lang; ?>" name="language">
 				<button type="submit" class="btn btn-primary btn-lg btn-block"><?php echo lang('FORM_BUTTON_SAVE'); ?></button>
 				<button type="reset" class="btn btn-secondary btn-lg btn-block"><?php echo lang('FORM_BUTTON_RESET'); ?></button>
 			</form>

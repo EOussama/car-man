@@ -11,7 +11,7 @@ $(document).ready(() => {
         // Preventing sending the form data.
         e.preventDefault();
         
-        $.post("../process/main.php", $('#send-form').serialize(), function (data) {
+        $.post("carman/save", $('#send-form').serialize(), function (data) {
 
             // Clearing past errors.
             $('.errors').empty();
@@ -29,8 +29,6 @@ $(document).ready(() => {
     function updateModels(brandID) {
 
         $.get("carman/updateModels/" + brandID, function (data) {
-
-            data = JSON.parse(data);
 
             // Clearing past models.
             $('#model-select').empty();
