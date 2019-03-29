@@ -1,0 +1,33 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+$lang['LANGUAGES_LABEL']                 = "اللغات";
+$lang['LANGUAGES_LABEL_ARABIC']          = "العربية";
+$lang['LANGUAGES_LABEL_SPANISH']         = "الأسبانية";
+$lang['FORM_LABEL_ID']                   = "الشفرة";
+$lang['FORM_INPUT_ID']                   = "أدخل الرمز";
+$lang['FORM_HELP_ID']                    = "إدخال رقم الهاتف إلزامي ، يجب ألا يتجاوز 50 حرفًا";
+$lang['FORM_LABEL_EMAIL']                = "البريد الإلكتروني";
+$lang['FORM_INPUT_EMAIL']                = "أدخل البريدا إلكترونيا";
+$lang['FORM_HELP_EMAIL']                 = "إدخال البريد إلكتروني إلزامي ، يجب ألا يتجاوز 50 حرفًا";
+$lang['FORM_LABEL_BRAND']                = "العلامة التجارية";
+$lang['FORM_LABEL_MODEL']                = "النموذج";
+$lang['FORM_LABEL_PLATE_NUMBER']         = "رقم اللوحة";
+$lang['FORM_INPUT_PLATE_NUMBER']         = "أدخل رقم اللوحة";
+$lang['FORM_HELP_PLATE_NUMBER']          = "إدخال رقم اللوحة إلزامي ، يجب ألا يتجاوز 8 أحرف";
+$lang['FORM_LABEL_YEAR']                 = "السنة";
+$lang['FORM_INPUT_YEAR']                 = "أدخل سنة";
+$lang['FORM_HELP_YEAR']                  = "إدخال السنة اختياري ، يجب ألا تتجاوز أربعة أعداد";
+$lang['FORM_LABEL_MOTIVE']               = "الحافز";
+$lang['FORM_SELECT_MOTIVE_ACCIDENT']     = "حادث";
+$lang['FORM_SELECT_MOTIVE_FAULT']        = "خلل";
+$lang['FORM_SELECT_MOTIVE_FIRE']         = "حريق";
+$lang['FORM_SELECT_MOTIVE_STOLEN']       = "سرقة";
+$lang['FORM_INPUT_OBSERVATIONS']         = "الملاحظات";
+$lang['FORM_LABEL_IMAGE']                = "الصورة";
+$lang['FORM_BUTTON_SAVE']                = "حفظ";
+$lang['FORM_BUTTON_RESET']               = "إعادة تعيين";
+$lang['ERROR_LENGTH_ID']                 = "يجب ألا يتجاوز رقم الهوية 50 حرفًا";
+$lang['ERROR_LENGTH_EMAIL']              = "يجب ألا يتجاوز البريد الإلكتروني 50 حرفًا";
+$lang['ERROR_LENGTH_PLATE_NUMBER']       = "يجب ألا يتجاوز رقم اللوحة 8 أحرف";
+$lang['ERROR_LENGTH_YEAR']               = "يجب ألا يتجاوز العام 4 أرقام";
