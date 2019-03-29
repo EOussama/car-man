@@ -60,7 +60,7 @@ class CarMan extends CI_Controller {
 		// Setting up the upload configurations.
 		$config['upload_path'] ="./uploads/";
 		$config['allowed_types'] = 'jpeg|jpg|png';
-		$config['max_size'] = 1024 * 2;
+		$config['max_size'] = 1024;
 		
 		// Loading the upload library.
 		$this->load->library('upload', $config);

@@ -21,8 +21,6 @@ $(document).ready(() => {
             cache: false,
             async: false,
             success: function (data) {
-                
-                console.log(data);
 
                 // Clearing past errors.
                 $('.errors').empty();
