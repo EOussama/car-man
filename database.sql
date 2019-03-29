@@ -1,8 +1,8 @@
 -- Creating a database.
-CREATE DATABASE IF NOT EXISTS `db_carsave`;
+CREATE DATABASE IF NOT EXISTS `db_carman`;
 
 -- Using the created database.
-USE `db_carsave`;
+USE `db_carman`;
 
 -- Creating the tables.
 CREATE TABLE IF NOT EXISTS `Brands` (

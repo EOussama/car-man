@@ -96,6 +96,8 @@ class CarMan extends CI_Controller {
 
 		if (count($errors) == 0) {
 			
+			// Inserting the data in the database.
+			$this->record->insert($id, $email, $brand, $model, $plateNumber, $year, $motive, $observation, $image);
 		}
 
 		header('Content-Type: application/json');

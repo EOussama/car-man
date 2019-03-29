@@ -8,6 +8,8 @@ class Model extends CI_Model {
     public $modelName;
 
     function getBrandModels($brandID) {
+        
+        // Connecting to the database.
         $this->load->database();
 
         $this->db->select('*');

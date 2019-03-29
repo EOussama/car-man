@@ -7,6 +7,8 @@ class Brand extends CI_Model {
     public $brandName;
 
     function getAll() {
+
+        // Connecting to the database.
         $this->load->database();
 
         $this->db->select('*');
