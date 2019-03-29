@@ -64,6 +64,9 @@ class CarMan extends CI_Controller {
 		
 		// Loading the upload library.
 		$this->load->library('upload', $config);
+
+		// Loading the record model.
+		$this->load->model('record');
 		
 		// Loading the language's helper.
 		$this->load->helper('language');
@@ -75,11 +78,15 @@ class CarMan extends CI_Controller {
 			$data = array('upload_data' => $this->upload->data());
 
 			// Getting the image name.
-			$image = $data['file_name'];
+			$image = $this->upload->data('file_name');
         }
 
 		if (strlen($id) > 50) {
 			$errors[] = lang('ERROR_LENGTH_ID');
+		}
+
+		if ($this->record->exists($id)) {
+			$errors[] = lang('ERROR_ID_EXISTS');
 		}
 
 		if (strlen($email) > 50) {

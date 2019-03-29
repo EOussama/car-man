@@ -16,7 +16,7 @@ class Record extends CI_Model {
     function insert($recordID, $email, $brandID, $modelID, $plateNumber, $year, $motive, $observation, $image) {
         
         // Connecting to the database.
-       /* $this->load->database();
+        $this->load->database();
 
         $data = [
             'RecordID' => $recordID,
@@ -28,9 +28,21 @@ class Record extends CI_Model {
             'Motive' => $motive,
             'Observation' => $observation,
             'Image' => $image
-        ];*/
+        ];
 
         // Inserting the data.
-        //$this->db->insert('Records', $data);
+        $this->db->insert('Records', $data);
+    }
+
+    function exists($recordID) {
+
+        // Connecting to the database.
+        $this->load->database();
+        
+        $this->db->where('RecordID', $recordID);
+
+        $query = $this->db->get('records');
+
+        return $query->num_rows() > 0;
     }
 }
