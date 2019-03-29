@@ -2,7 +2,7 @@
 			<div class="errors <?php echo ($lang === 'ar') ? "text-right" : "text-left" ?>">
 
 			</div>
-			<form id="send-form">
+			<form id="send-form" enctype="multipart/form-data">
 				<div class="form-group <?php echo ($lang === 'ar') ? "text-right" : "text-left" ?>">
 					<label for="idTarget"><?php echo lang('FORM_LABEL_ID'); ?></label>
 					<input type="number" class="form-control <?php echo ($lang === 'ar') ? "text-right" : "text-left" ?>" id="idTarget" aria-describedby="idHelp" placeholder="<?php echo lang('FORM_INPUT_ID'); ?>" name="id" required>
@@ -51,8 +51,8 @@
 					<textarea class="form-control <?php echo ($lang === 'ar') ? "text-right" : "text-left" ?>" id="textareaTarget" rows="4" name="observation"></textarea>
 				</div>
 				<div class="form-group <?php echo ($lang === 'ar') ? "text-right" : "text-left" ?>">
-					<label for="filetarget"><?php echo lang('FORM_LABEL_IMAGE'); ?></label>
-					<input type="file" class="form-control-file" id="filetarget" accept="image/*">
+					<label for="imageTarget"><?php echo lang('FORM_LABEL_IMAGE'); ?></label>
+					<input type="file" class="form-control-file" id="imageTarget" name="image" accept="image/*" size="20">
 				</div>
 
 				<input type="hidden" value="<?= $lang; ?>" name="language">

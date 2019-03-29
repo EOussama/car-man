@@ -45,22 +45,38 @@ class CarMan extends CI_Controller {
 	public function save() {
 		
 		// Getting the data.
-		$id =  $this->input->post('id');
-		$email =  $this->input->post('email');
-		$brand =  $this->input->post('brand');
-		$model =  $this->input->post('model');
-		$plateNumber =  $this->input->post('plateNumber');
-		$year =  $this->input->post('year');
-		$motive =  $this->input->post('motive');
-		$observation =  $this->input->post('observation');
+		$id = $this->input->post('id');
+		$email = $this->input->post('email');
+		$brand = $this->input->post('brand');
+		$model = $this->input->post('model');
+		$plateNumber = $this->input->post('plateNumber');
+		$year = $this->input->post('year');
+		$motive = $this->input->post('motive');
+		$observation = $this->input->post('observation');
 		$language = $this->input->post('language');
-		$image = "";
+		$image = '';
+		$errors = [];
+
+		// Setting up the upload configurations.
+		$config['upload_path'] ="./uploads/";
+		$config['allowed_types'] = 'jpeg|jpg|png';
+		$config['max_size'] = 1024 * 2;
+		
+		// Loading the upload library.
+		$this->load->library('upload', $config);
 		
 		// Loading the language's helper.
 		$this->load->helper('language');
 		$this->lang->load($language, $language);
 
-		$errors = [];
+        if($this->upload->do_upload("image")) {
+
+			// Uploading the image.
+			$data = array('upload_data' => $this->upload->data());
+
+			// Getting the image name.
+			$image = $data['file_name'];
+        }
 
 		if (strlen($id) > 50) {
 			$errors[] = lang('ERROR_LENGTH_ID');
@@ -76,6 +92,10 @@ class CarMan extends CI_Controller {
 
 		if (strlen($year) > 4) {
 			$errors[] = lang('ERROR_LENGTH_YEAR');
+		}
+
+		if (count($errors) == 0) {
+			
 		}
 
 		header('Content-Type: application/json');
