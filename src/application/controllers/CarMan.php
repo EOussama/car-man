@@ -135,6 +135,10 @@ class CarMan extends CI_Controller {
 			$msg .= "Motive: $motive<br>";
 			$msg .= "Observations: $observations";
 
+			if ($image !== '') {
+				$this->email->attach('./uploads/' . $image);
+			} 
+
 			$this->email->message($msg);
 			$this->email->set_mailtype("html");
 			
