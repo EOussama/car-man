@@ -4,9 +4,9 @@
 			</div>
 			<form id="send-form" enctype="multipart/form-data">
 				<div class="form-group <?php echo ($lang === 'ar') ? "text-right" : "text-left" ?>">
-					<label for="idTarget"><?php echo lang('FORM_LABEL_ID'); ?></label>
-					<input type="number" class="form-control <?php echo ($lang === 'ar') ? "text-right" : "text-left" ?>" id="idTarget" aria-describedby="idHelp" placeholder="<?php echo lang('FORM_INPUT_ID'); ?>" name="id" required>
-					<small id="idHelp" class="form-text text-muted"><?php echo lang('FORM_HELP_ID'); ?></small>
+					<label for="nameTarget"><?php echo lang('FORM_LABEL_NAME'); ?></label>
+					<input type="text" class="form-control <?php echo ($lang === 'ar') ? "text-right" : "text-left" ?>" id="nameTarget" aria-describedby="nameHelp" placeholder="<?php echo lang('FORM_INPUT_NAME'); ?>" name="name" required>
+					<small id="nameHelp" class="form-text text-muted"><?php echo lang('FORM_HELP_NAME'); ?></small>
 				</div>
 				<div class="form-group <?php echo ($lang === 'ar') ? "text-right" : "text-left" ?>">
 					<label for="emailTarget"><?php echo lang('FORM_LABEL_EMAIL'); ?></label>

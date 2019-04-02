@@ -22,7 +22,8 @@ CREATE TABLE IF NOT EXISTS `Models` (
 );
 
 CREATE TABLE IF NOT EXISTS `Records` (
-    `RecordID`              VARCHAR(50) NOT NULL,
+    `RecordID`              INT NOT NULL AUTO_INCREMENT,
+    `Name`                  VARCHAR(50) NOT NULL,
     `Email`                 VARCHAR(50) NOT NULL,
     `BrandID`               SMALLINT NOT NULL,
     `ModelID`               SMALLINT NOT NULL,

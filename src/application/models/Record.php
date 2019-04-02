@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Record extends CI_Model {
 
     public $recordID;
+    public $name;
     public $email;
     public $brandID;
     public $modelID;
@@ -13,13 +14,13 @@ class Record extends CI_Model {
     public $observation;
     public $image;
 
-    function insert($recordID, $email, $brandID, $modelID, $plateNumber, $year, $motive, $observation, $image) {
+    function insert($name, $email, $brandID, $modelID, $plateNumber, $year, $motive, $observation, $image) {
         
         // Connecting to the database.
         $this->load->database();
 
         $data = [
-            'RecordID' => $recordID,
+            'Name' => $name,
             'Email' => $email,
             'BrandID' => $brandID,
             'ModelID' => $modelID,
@@ -32,17 +33,5 @@ class Record extends CI_Model {
 
         // Inserting the data.
         $this->db->insert('Records', $data);
-    }
-
-    function exists($recordID) {
-
-        // Connecting to the database.
-        $this->load->database();
-        
-        $this->db->where('RecordID', $recordID);
-
-        $query = $this->db->get('records');
-
-        return $query->num_rows() > 0;
     }
 }

@@ -45,7 +45,7 @@ class CarMan extends CI_Controller {
 	public function save() {
 		
 		// Getting the data.
-		$id = $this->input->post('id');
+		$name = $this->input->post('name');
 		$email = $this->input->post('email');
 		$brand = $this->input->post('brand');
 		$model = $this->input->post('model');
@@ -81,12 +81,8 @@ class CarMan extends CI_Controller {
 			$image = $this->upload->data('file_name');
         }
 
-		if (strlen($id) > 50) {
-			$errors[] = lang('ERROR_LENGTH_ID');
-		}
-
-		if ($this->record->exists($id)) {
-			$errors[] = lang('ERROR_ID_EXISTS');
+		if (strlen($name) > 50) {
+			$errors[] = lang('ERROR_LENGTH_NAME');
 		}
 
 		if (strlen($email) > 50) {
@@ -104,7 +100,7 @@ class CarMan extends CI_Controller {
 		if (count($errors) == 0) {
 			
 			// Inserting the data in the database.
-			$this->record->insert($id, $email, $brand, $model, $plateNumber, $year, $motive, $observations, $image);
+			$this->record->insert($name, $email, $brand, $model, $plateNumber, $year, $motive, $observations, $image);
 
 			// Sending email.
 			$emailConfig = Array(
@@ -126,7 +122,7 @@ class CarMan extends CI_Controller {
 
 			$this->email->subject('Car Management');
 
-			$msg = "Code: $id<br>";
+			$msg = "Name: $name<br>";
 			$msg .= "Email: $email<br>";
 			$msg .= "Brand: $brand<br>";
 			$msg .= "Model: $model<br>";
