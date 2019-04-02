@@ -48,7 +48,7 @@
 				</div>
 				<div class="form-group <?php echo ($lang === 'ar') ? "text-right" : "text-left" ?>">
 					<label for="textareaTarget"><?php echo lang('FORM_INPUT_OBSERVATIONS'); ?></label>
-					<textarea class="form-control <?php echo ($lang === 'ar') ? "text-right" : "text-left" ?>" id="textareaTarget" rows="4" name="observation"></textarea>
+					<textarea class="form-control <?php echo ($lang === 'ar') ? "text-right" : "text-left" ?>" id="textareaTarget" rows="4" name="observations"></textarea>
 				</div>
 				<div class="form-group <?php echo ($lang === 'ar') ? "text-right" : "text-left" ?>">
 					<label for="imageTarget"><?php echo lang('FORM_LABEL_IMAGE'); ?></label>

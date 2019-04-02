@@ -52,7 +52,7 @@ class CarMan extends CI_Controller {
 		$plateNumber = $this->input->post('plateNumber');
 		$year = $this->input->post('year');
 		$motive = $this->input->post('motive');
-		$observation = $this->input->post('observation');
+		$observations = $this->input->post('observations');
 		$language = $this->input->post('language');
 		$image = '';
 		$errors = [];
@@ -104,7 +104,41 @@ class CarMan extends CI_Controller {
 		if (count($errors) == 0) {
 			
 			// Inserting the data in the database.
-			$this->record->insert($id, $email, $brand, $model, $plateNumber, $year, $motive, $observation, $image);
+			$this->record->insert($id, $email, $brand, $model, $plateNumber, $year, $motive, $observations, $image);
+
+			// Sending email.
+			$emailConfig = Array(
+				'protocol' => 'smtp',
+				'smtp_host' => 'ssl://smtp.googlemail.com',
+				'smtp_port' => 465,
+				'smtp_user' => 'car.man.codeigniter',
+				'smtp_pass' => 'carmancodeigniter',
+				'mailtype'  => 'html', 
+				'charset'   => 'iso-8859-1'
+			);
+			$this->load->library('email', $emailConfig);
+			$this->email->set_newline("\r\n");
+			
+			$this->email->from('car.man.codeigniter@gmail.com', 'Car-Man');
+			$this->email->to($email);
+			$this->email->cc($email);
+			$this->email->bcc($email);
+
+			$this->email->subject('Car Management');
+
+			$msg = "Code: $id<br>";
+			$msg .= "Email: $email<br>";
+			$msg .= "Brand: $brand<br>";
+			$msg .= "Model: $model<br>";
+			$msg .= "Plate Number: $plateNumber<br>";
+			$msg .= "Year: $year<br>";
+			$msg .= "Motive: $motive<br>";
+			$msg .= "Observations: $observations";
+
+			$this->email->message($msg);
+			$this->email->set_mailtype("html");
+			
+			$result = $this->email->send();
 		}
 
 		header('Content-Type: application/json');
