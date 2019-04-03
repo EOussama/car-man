@@ -31,5 +31,6 @@ $lang['ERROR_LENGTH_NAME']               = "El número de identidad no debe exce
 $lang['ERROR_LENGTH_EMAIL']             = "El correo electrónico no debe exceder los 50 caracteres";
 $lang['ERROR_LENGTH_PLATE_NUMBER']      = "El número de placa no debe exceder los 8 caracteres";
 $lang['ERROR_LENGTH_YEAR']              = "No debe exceder los 4 dígitos";
+$lang['ERROR_IMAGE_SIZE']               = "La imagen no debe exceder de 1 MB";
 $lang['MODAL_SENDING_LABEL']            = "Enviando";
 $lang['MODAL_SENT_LABEL']               = "¡Enviado exitosamente!";

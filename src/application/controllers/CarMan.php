@@ -60,7 +60,7 @@ class CarMan extends CI_Controller {
 		// Setting up the upload configurations.
 		$config['upload_path'] ="./uploads/";
 		$config['allowed_types'] = 'jpeg|jpg|png';
-		$config['max_size'] = 1024;
+		$config['max_size'] = 1024 * 2;
 		
 		// Loading the upload library.
 		$this->load->library('upload', $config);
@@ -72,14 +72,14 @@ class CarMan extends CI_Controller {
 		$this->load->helper('language');
 		$this->lang->load($language, $language);
 
-        if($this->upload->do_upload("image")) {
-
+		if($this->upload->do_upload("image")) {
+	
 			// Uploading the image.
-			$data = array('upload_data' => $this->upload->data());
+			$this->upload->data();
 
 			// Getting the image name.
 			$image = $this->upload->data('file_name');
-        }
+		}
 
 		if (strlen($name) > 50) {
 			$errors[] = lang('ERROR_LENGTH_NAME');
@@ -97,8 +97,12 @@ class CarMan extends CI_Controller {
 			$errors[] = lang('ERROR_LENGTH_YEAR');
 		}
 
+		if ($_FILES['image']['size'] > 1024 * 1024) {
+			$errors[] = lang('ERROR_IMAGE_SIZE');
+		}
+		
 		if (count($errors) == 0) {
-			
+
 			// Inserting the data in the database.
 			$this->record->insert($name, $email, $brand, $model, $plateNumber, $year, $motive, $observations, $image);
 

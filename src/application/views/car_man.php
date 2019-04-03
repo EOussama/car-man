@@ -52,7 +52,7 @@
 				</div>
 				<div class="form-group <?php echo ($lang === 'ar') ? "text-right" : "text-left" ?>">
 					<label for="imageTarget"><?php echo lang('FORM_LABEL_IMAGE'); ?></label>
-					<input type="file" class="form-control-file" id="imageTarget" name="image" accept="image/*" size="20">
+					<input type="file" class="form-control-file" id="imageTarget" name="image" accept="image/*">
 				</div>
 
 				<input type="hidden" value="<?= $lang; ?>" name="language">
