@@ -59,4 +59,18 @@
 				<button type="submit" class="btn btn-primary btn-lg btn-block"><?php echo lang('FORM_BUTTON_SAVE'); ?></button>
 				<button type="reset" class="btn btn-secondary btn-lg btn-block"><?php echo lang('FORM_BUTTON_RESET'); ?></button>
 			</form>
-		
+
+			<!-- Modal -->
+			<div class="modal fade" id="loading-modal" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header align-items-center">
+							<strong><?= lang('MODAL_SENDING_LABEL') ?>...</strong>
+							<div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+						</div>
+						<div class="modal-body">
+							<?= lang('MODAL_SENT_LABEL') ?>
+						</div>
+					</div>
+				</div>
+			</div>

@@ -124,11 +124,11 @@ class CarMan extends CI_Controller {
 
 			$msg = "Name: $name<br>";
 			$msg .= "Email: $email<br>";
-			$msg .= "Brand: $brand<br>";
-			$msg .= "Model: $model<br>";
+			$msg .= "Brand: " . $brand . "<br>";
+			$msg .= "Model: " . $model . "<br>";
 			$msg .= "Plate Number: $plateNumber<br>";
 			$msg .= "Year: $year<br>";
-			$msg .= "Motive: $motive<br>";
+			$msg .= "Motive: " . $motive . "<br>";
 			$msg .= "Observations: $observations";
 
 			if ($image !== '') {

@@ -1,5 +1,8 @@
 $(document).ready(() => {
 
+    const modal = $('#loading-modal');
+
+    $('.modal-body').hide();
     updateModels(1);
 
     $('#brand-select').on('change', (e) => {
@@ -7,6 +10,9 @@ $(document).ready(() => {
     });
 
     $('#send-form').on('submit', (e) => {
+
+        // Opening up the modal.
+        modal.modal('show');
 
         // Preventing sending the form data.
         e.preventDefault();
@@ -19,19 +25,40 @@ $(document).ready(() => {
             processData: false,
             contentType: false,
             cache: false,
-            async: false,
+            async: true,
             success: function (data) {
 
-                // Clearing past errors.
-                $('.errors').empty();
+                setTimeout(() => {
 
-                if (data.length > 0) {
+                    // Clearing past errors.
+                    $('.errors').empty();
 
-                    // Displaying the current errors.   
-                    for (const error of data) {
-                        $(".errors").append("<div class=\"alert alert-danger\" role=\"alert\">" + error + "</div>");
+                    if (data.length > 0) {
+
+                        // Scrolling to the errors section.
+                        $("html, body").animate({ scrollTop: 0 }, "slow");
+
+                        // Closing up the modal.
+                        modal.modal('hide');
+
+                        // Displaying the current errors.   
+                        for (const error of data) {
+                            $(".errors").append("<div class=\"alert alert-danger\" role=\"alert\">" + error + "</div>");
+                        }
+                    } else {
+
+                        $('.modal-body').show();
+
+                        setTimeout(() => {
+
+                            $('.modal-body').hide();
+
+                            // Closing up the modal.
+                            modal.modal('hide');
+
+                        }, 1000);
                     }
-                }
+                }, 1000);
             }
         });
     });
