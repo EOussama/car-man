@@ -32,4 +32,4 @@ $lang['ERROR_LENGTH_EMAIL']             = "يجب ألا يتجاوز البري
 $lang['ERROR_LENGTH_PLATE_NUMBER']      = "يجب ألا يتجاوز رقم اللوحة 8 أحرف";
 $lang['ERROR_LENGTH_YEAR']              = "يجب ألا يتجاوز العام 4 أرقام";
 $lang['MODAL_SENDING_LABEL']            = "إرسال";
-$lang['MODAL_SENT_LABEL']               = "أرسلت بنجاح!";
+$lang['MODAL_SENT_LABEL']               = "أرسلت بنجاح";
